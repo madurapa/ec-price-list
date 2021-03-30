@@ -56,6 +56,7 @@
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
+            <th>&nbsp;</th>
             <th>නාරාහේන්පිට <sup><i class="bi bi-basket2-fill" data-toggle="tooltip" title="සිල්ලර මිල"></i></sup></th>
             <th>රත්මලාන <sup><i class="bi bi-basket2-fill" data-toggle="tooltip" title="සිල්ලර මිල"></i></sup></th>
             <th>වැලිසර <sup><i class="bi bi-basket2-fill" data-toggle="tooltip" title="සිල්ලර මිල"></i></sup></th>
@@ -98,7 +99,7 @@
             "fixedHeader": true,
             "paging": false,
             "info": false,
-            "order": [[2, 'asc']],
+            "order": [[2, 'asc'],[3, 'asc']],
             "language": {
                 "searchPlaceholder": "සොයන්න",
                 "search": "",
@@ -107,12 +108,14 @@
             "columnDefs": [
                 {"visible": false, "targets": groupColumn},
                 {"visible": false, "targets": 2},
+                {"visible": false, "targets": 3},
                 {"targets": "_all", "orderable": false}
             ],
             "columns": [
                 {"data": "name", "defaultContent": "N/A"},
                 {"data": "type", "defaultContent": "N/A"},
-                {"data": "type_id", "defaultContent": "N/A"},
+                {"data": "type_position", "defaultContent": "N/A"},
+                {"data": "item_position", "defaultContent": "N/A"},
                 {"data": "ec_1", "defaultContent": "N/A"},
                 {"data": "ec_2", "defaultContent": "N/A"},
                 {"data": "ec_3", "defaultContent": "N/A"},
