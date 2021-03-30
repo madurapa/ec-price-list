@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18587883-2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NN97XX99B1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-18587883-2');
+
+        gtag('config', 'G-NN97XX99B1');
     </script>
 
     <meta charset="utf-8">
@@ -55,10 +52,6 @@
            class="table table-hover table-bordered table-responsive-sm table-responsive-md nowrap table-dark"
            style="width:100%;border: 1px solid #000000;background-color: #444444;">
         <thead>
-        <!--        <tr class="bg-success text-white">
-                    <th>කාණ්ඩය / වර්ගය</th>
-                    <th colspan="9" class="text-center">ආර්ථික මධ්‍යස්ථාන</th>
-                </tr>-->
         <tr id="searchColumns" class="bg-warning text-dark">
             <th>&nbsp;</th>
             <th>&nbsp;</th>
@@ -75,7 +68,6 @@
     </table>
     <footer class="container">
         <div class="mx-auto" style="height: 20px;"></div>
-        <p class="text-center"><sup>*</sup>සියළුම මිල ගණන් රුපියල් වලින් දක්වා ඇත.</p>
         <p class="text-center">හුදී ජනයාගේ හිත සුව පිණිස 2021 මාර්තු 30 වෙනිදා යාවත්කාලීන කරන ලදී <img src="https://cdn.countryflags.com/thumbs/sri-lanka/flag-heart-3d-250.png" width="16px">
             <small>[<a target="_blank" href="http://www.dinamina.lk/">දත්ත මූලාශ්‍රය</a>]</small></p>
     </footer>
@@ -149,10 +141,6 @@
                     });
                 });
 
-                /*$('#searchColumns th').each(function (index) {
-                    $("#searchColumns th:eq(" + index + ")").attr("style", $("#searchColumns").prev().find("th:eq(" + index + ")").attr("style"));
-                });*/
-
                 $("#example_wrapper > .row:eq(0) > div:eq(0)").html('<ul class="list-inline">\n' +
                     '  <li class="list-inline-item bg-danger text-light p-2 font-weight-bold"><i class="bi bi-basket2-fill"></i> - සිල්ලර මිල</li>\n' +
                     '  <li class="list-inline-item bg-danger text-light p-2 font-weight-bold"><i class="bi bi-truck"></i> - තොග මිල</li>\n' +
@@ -174,23 +162,12 @@
             }
         });
 
-        //new $.fn.dataTable.FixedHeader(table);
-
         $('#example thead').on('keyup', ".column_search", function () {
             table
                 .column($(this).parent().index())
                 .search(this.value)
                 .draw();
         });
-
-        /*table.on('responsive-resize', function (e, datatable, columns) {
-            var count = columns.reduce(function (a, b, index) {
-                $("#searchColumns th:eq(" + index + ")").attr("style", $("#searchColumns").prev().find("th:eq(" + index + ")").attr("style"));
-                return b === false ? a + 1 : a;
-            }, 0);
-        });*/
-
-
     });
 </script>
 </html>
