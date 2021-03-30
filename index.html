@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18587883-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-18587883-2');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://cdn.countryflags.com/thumbs/sri-lanka/flag-heart-3d-250.png">
+
+    <title>ශ්‍රී ලංකාවේ ආර්ථික මධ්‍යස්ථාන වල මිල ගණන්</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <style type="text/css">
+
+        body {
+            background-color: #e5e5f7;
+        }
+
+        .table thead th {
+            border-bottom: none;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<main role="main" class="container-fluid">
+    <div class="mx-auto" style="height: 20px;"></div>
+    <h2 class="text-center">ශ්‍රී ලංකාවේ ආර්ථික මධ්‍යස්ථාන වල මිල ගණන්</h2>
+    <p class="text-center">(සියළුම මිල ගණන් රුපියල් වලින් දක්වා ඇත)</p>
+
+
+    <table id="example"
+           class="table table-hover table-bordered table-responsive-sm table-responsive-md nowrap table-dark"
+           style="width:100%;border: 1px solid #000000;background-color: #444444;">
+        <thead>
+        <!--        <tr class="bg-success text-white">
+                    <th>කාණ්ඩය / වර්ගය</th>
+                    <th colspan="9" class="text-center">ආර්ථික මධ්‍යස්ථාන</th>
+                </tr>-->
+        <tr id="searchColumns" class="bg-warning text-dark">
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>නාරාහේන්පිට <sup><i class="bi bi-basket2-fill"></i></sup></th>
+            <th>රත්මලාන <sup><i class="bi bi-basket2-fill"></i></sup></th>
+            <th>වැලිසර <sup><i class="bi bi-basket2-fill"></i></sup></th>
+            <th>මීගොඩ <sup><i class="bi bi-truck"></i></sup></th>
+            <th>තඹුත්තේගම <sup><i class="bi bi-truck"></i></sup></th>
+            <th>දඹුල්ල <sup><i class="bi bi-truck"></i></sup></th>
+            <th>නුවරඑළිය <sup><i class="bi bi-truck"></i></sup></th>
+        </tr>
+        </thead>
+    </table>
+    <footer class="container">
+        <div class="mx-auto" style="height: 20px;"></div>
+        <p class="text-center"><sup>*</sup>සියළුම මිල ගණන් රුපියල් වලින් දක්වා ඇත.</p>
+        <p class="text-center">හුදී ජනයාගේ හිත සුව පිණිස 2021 මාර්තු 30 වෙනිදා යාවත්කාලීන කරන ලදී <img src="https://cdn.countryflags.com/thumbs/sri-lanka/flag-heart-3d-250.png" width="16px">
+            <small>[<a target="_blank" href="http://www.dinamina.lk/">දත්ත මූලාශ්‍රය</a>]</small></p>
+    </footer>
+</main>
+
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        var groupColumn = 1;
+
+        var table = $('#example').DataTable({
+            "ajax": {url: "data.json", dataSrc: ""},
+            "crossDomain": true,
+            "dataType": "json",
+            "responsive": true,
+            "fixedHeader": true,
+            "paging": false,
+            "info": false,
+            "order": [[2, 'asc']],
+            "language": {
+                "searchPlaceholder": "සොයන්න",
+                "search": "",
+            },
+            "bPaginate": false,
+            "columnDefs": [
+                {"visible": false, "targets": groupColumn},
+                {"visible": false, "targets": 2},
+                {"targets": "_all", "orderable": false}
+            ],
+            "columns": [
+                {"data": "name", "defaultContent": "N/A"},
+                {"data": "type", "defaultContent": "N/A"},
+                {"data": "type_id", "defaultContent": "N/A"},
+                {"data": "ec_1", "defaultContent": "N/A"},
+                {"data": "ec_2", "defaultContent": "N/A"},
+                {"data": "ec_3", "defaultContent": "N/A"},
+                {"data": "ec_4", "defaultContent": "N/A"},
+                {"data": "ec_5", "defaultContent": "N/A"},
+                {"data": "ec_6", "defaultContent": "N/A"},
+                {"data": "ec_7", "defaultContent": "N/A"},
+            ],
+            initComplete: function () {
+                this.api().columns([1]).every(function () {
+                    var column = this;
+                    var select = $('<select class="custom-select custom-select-sm"><option value="">සියල්ලම</option></select>')
+                        .appendTo($("#example thead tr:eq(0) th").eq(0).empty())
+                        .on('change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
+
+                    column.data().unique().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>');
+                    });
+                });
+
+                /*$('#searchColumns th').each(function (index) {
+                    $("#searchColumns th:eq(" + index + ")").attr("style", $("#searchColumns").prev().find("th:eq(" + index + ")").attr("style"));
+                });*/
+
+                $("#example_wrapper > .row:eq(0) > div:eq(0)").html('<ul class="list-inline">\n' +
+                    '  <li class="list-inline-item bg-danger text-light p-2 font-weight-bold"><i class="bi bi-basket2-fill"></i> - සිල්ලර මිල</li>\n' +
+                    '  <li class="list-inline-item bg-danger text-light p-2 font-weight-bold"><i class="bi bi-truck"></i> - තොග මිල</li>\n' +
+                    '</ul>');
+            },
+            "drawCallback": function (settings) {
+                var api = this.api();
+                var rows = api.rows({page: 'current'}).nodes();
+                var last = null;
+
+                api.column(groupColumn, {page: 'current'}).data().each(function (group, i) {
+                    if (last !== group) {
+                        $(rows).eq(i).before(
+                            '<tr class="group text-dark" style="background-color: #c0c0c0"><td colspan="8" class="font-weight-bold text-center">' + group + '</td></tr>'
+                        );
+                        last = group;
+                    }
+                });
+            }
+        });
+
+        //new $.fn.dataTable.FixedHeader(table);
+
+        $('#example thead').on('keyup', ".column_search", function () {
+            table
+                .column($(this).parent().index())
+                .search(this.value)
+                .draw();
+        });
+
+        /*table.on('responsive-resize', function (e, datatable, columns) {
+            var count = columns.reduce(function (a, b, index) {
+                $("#searchColumns th:eq(" + index + ")").attr("style", $("#searchColumns").prev().find("th:eq(" + index + ")").attr("style"));
+                return b === false ? a + 1 : a;
+            }, 0);
+        });*/
+
+
+    });
+</script>
+</html>
